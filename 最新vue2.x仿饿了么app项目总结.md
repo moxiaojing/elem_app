@@ -31,6 +31,7 @@
   **main.js** 入口文件的 js 逻辑，在 webpack 打包之后将被注入到 index.html 中
 
 ##2-各组件之间的关系：
+```
 ├──APP.vue
   │  ├──Header.vue--头部组件
   │  │  ├──iconClassMap--图标组件（减，折，特，票，保）
@@ -50,6 +51,7 @@
   ├──iconClassMap--图标组件（减，折，特，票，保）
   ├──split.vue--关于分割线组件
   ├──RatingSelect.vue--评价内容筛选组件
+```
 
 ##3-开发过程问题汇总：
 
