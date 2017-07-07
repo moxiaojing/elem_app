@@ -14,21 +14,24 @@
     •	点击list查看商品详情页，父子组件的通信
     •	评论内容够可以筛选查看
     •	购物车组件，包括添加删除商品及动效，购物控件与购物车组件之间非父子组件通信，点击购物车图标，展示选择的商品列表
-    •	商家实景图片可以左右滑动 等
+    •	商家实景图片可以左右滑动 
+    •	loaclStorage缓存商家信息（id、name）
 
 项目地址：https://github.com/moxiaojing/elem_app
 *如果觉得对您有帮助，您可以在右上角给我个star支持一下，谢谢！*
 
 ##1-项目结构分析：
-  **common/** 文件夹存放的是通用的css和fonts
-  **components/** 文件夹用来存放我们的 Vue 组件
-  **router/** 文件夹存放的是vue-router相关配置（linkActiveClass,routes注册组件路由）
-  **build/** 文件是 webpack 的打包编译配置文件
-  **config/** 文件夹存放的是一些配置项，比如我们服务器访问的端口配置等
-  **dist/** 该文件夹一开始是不存在，在我们的项目经过 build 之后才会产出
-  **App.vue** 根组件，所有的子组件都将在这里被引用，eventHub空实例是用来组件间通信的中央数据总线作用，主要连接购买控件和购物车组件之间的数据通信
-  **index.html** 整个项目的入口文件，将会引用我们的根组件 App.vue
-  **main.js** 入口文件的 js 逻辑，在 webpack 打包之后将被注入到 index.html 中
+
+    common/---- 文件夹存放的是通用的css和fonts
+    components/----文件夹用来存放我们的 Vue 组件
+    router/----文件夹存放的是vue-router相关配置（linkActiveClass,routes注册组件路由）
+    build/----文件是 webpack 的打包编译配置文件
+    config/----文件夹存放的是一些配置项，比如我们服务器访问的端口配置等
+    dist/----该文件夹一开始是不存在，在我们的项目经过 build 之后才会产出
+    prod.server.js----该文件是测试是模拟的服务器配置，用来运行dist里面的文件，在config/index.js中,build对象中添加一条端口设置port：9000，
+    App.vue----根组件，所有的子组件都将在这里被引用，eventHub空实例是用来组件间通信的中央数据总线作用，主要连接购买控件和购物车组件之间的数据通信
+    index.html----整个项目的入口文件，将会引用我们的根组件 App.vue
+    main.js----入口文件的 js 逻辑，在 webpack 打包之后将被注入到 index.html 中
 
 ##2-各组件之间的关系：
 ```
@@ -505,6 +508,12 @@ npm run dev
 
 构建生产
 npm run build
+
+运行打包文件
+node prod.server.js 
+
+会看到 Listening at http://localhost:9000 在浏览器中打开即可
+
 ```
 
 ##8-3、手机测试网页技巧
