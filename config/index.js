@@ -9,7 +9,7 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',//根目录
-    productionSourceMap: true,
+    productionSourceMap: false,// true表示在浏览器Sources下可以看到原文件，便于调试
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
